@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-钢琴按键功能音乐导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .nav {
+            width: 800px;
+            height: 60px;
+            margin: 100px auto;
+            background-color: #000;
+        }
+        .nav li {
+            float: left;
+            position: relative;
+            overflow: hidden;
+            width: 100px;
+            height: 60px;
+        }
+        .nav li a {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 60px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 60px;
+            z-index: 2;
+        }
+        .nav span {
+            float: left;
+            width: 100px;
+            height: 60px;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: greenyellow;
+
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <ul>
+        <li><a href="javascript:;">导航1</a><span></span></li>
+        <li><a href="javascript:;">导航2</a><span></span></li>
+        <li><a href="javascript:;">导航3</a><span></span></li>
+        <li><a href="javascript:;">导航4</a><span></span></li>
+        <li><a href="javascript:;">导航5</a><span></span></li>
+        <li><a href="javascript:;">导航6</a><span></span></li>
+        <li><a href="javascript:;">导航7</a><span></span></li>
+        <li><a href="javascript:;">导航8</a><span></span></li>
+    </ul>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $("li").mouseenter(function () {
+            $(this).children("span").stop().animate({top:0});
+        }).mouseleave(function () {
+            $(this).children("span").stop().animate({top:60});
+        });
+
+        // 键盘按下：1~8 对应钢琴导航事件
+        // 有一个问题：键盘按下不松手，会一直触发mouseenter事件
+
+        // 节流阀：按下时触发，如果没弹起，就不会触发下一次
+        var flag = true;
+        $(document).on("keydown", function (e) {
+            if(flag){
+                flag = false;
+                var code = e.keyCode;
+                if(code >= 49 && code <=56) {
+                    $("li").eq(code - 49).trigger("mouseenter");
+                }
+            }
+        });
+        $(document).on("keyup", function (e) {
+            flag = true;
+            var code = e.keyCode;
+            if(code >= 49 && code <=56) {
+                $("li").eq(code - 49).trigger("mouseleave");
+            }
+        })
+
+    });
+</script>
+</body>
+</html>

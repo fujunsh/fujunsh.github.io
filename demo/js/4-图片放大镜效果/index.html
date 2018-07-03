@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4-图片放大镜效果</title>
+	<style type="text/css">
+		* {margin: 0;padding: 0;}
+		.box {
+			width: 350px;
+			height: 350px;
+			border: 1px solid #ccc;
+			margin: 100px;
+			position: relative;
+		}
+		.big {
+			width: 450px;
+			height: 450px;
+			border: 1px solid #ccc;
+			position: absolute;
+			top: 0;
+			left: 360px;
+			overflow: hidden;
+			display: none;
+		}
+		.small {
+			width: 350px;
+			height: 350px;
+			position: relative;
+		}
+		.mask {
+			width: 100px;
+			height: 100px;
+			background-color: rgba(255, 255, 0, 0.4);
+			position: absolute;
+			top: 0;
+			left: 0;
+			cursor: move;
+			display: none;
+		}
+		.big img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="small">
+			<img src="001.jpg">
+			<div class="mask"></div>
+		</div>
+		<div class="big">
+			<img src="0001.jpg">
+		</div>
+	</div>	
+</body>
+</html>
+<script type="text/javascript">
+	var box = document.getElementById("box");
+	var smallBox = box.children[0];
+	var bigBox = box.children[1];
+	var mask = smallBox.children[1];
+	var bigimg = bigBox.children[0];
+	smallBox.onmouseover = function(){
+		bigBox.style.display = "block";
+		mask.style.display = "block";
+	};
+//	smallBox.onmouseout = function(){
+//		bigBox.style.display = "none";
+//		mask.style.display = "none";
+//	};
+	// 鼠标在small盒子内移动，mask图片跟随
+	var x = 0, y = 0;
+	smallBox.onmousemove = function(event){
+		var event = event || window.event;
+		// 计算 mask 的坐标位置
+		// 可视区坐标位置 - margin - 遮罩层自身的宽度和高度
+		x = event.clientX - this.offsetParent.offsetLeft - mask.offsetWidth / 2;
+		y = event.clientY - this.offsetParent.offsetTop - mask.offsetHeight / 2;
+		// 判断边距
+		if(x <= 0){
+			x = 0;
+		}
+		else if(x >= smallBox.offsetWidth - mask.offsetWidth){
+			x = smallBox.offsetWidth - mask.offsetWidth;
+		}
+		if(y <= 0){
+			y = 0;
+		}
+		else if(y >= smallBox.offsetHeight - mask.offsetHeight){
+			y = smallBox.offsetHeight - mask.offsetHeight;
+		}
+		mask.style.left = x + "px";
+		mask.style.top = y + "px";
+		// 根据大小盒子的比例，进行反方向位移
+		// 遮罩层的移动距离/大图的移动距离 =
+		// 遮罩层的最大移动距离/大图的最大移动距离
+		var bigMaxX = bigimg.offsetWidth - bigBox.offsetWidth;
+		var bigMaxY = bigimg.offsetHeight - bigBox.offsetHeight;
+		var maskMaxX = smallBox.offsetWidth - mask.offsetWidth;
+		var maskMaxY = smallBox.offsetHeight - mask.offsetHeight;
+		bigimg.style.left = -x * bigMaxX/maskMaxX + "px";
+		bigimg.style.top = -y * bigMaxY/maskMaxY + "px";
+	}
+</script>

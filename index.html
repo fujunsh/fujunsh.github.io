@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人作品-傅珺晟</title>
+	<link rel="stylesheet" href="css/base.css">
+	<!--<link rel="stylesheet" href="css/style.css">-->
+</head>
+<body>
+	<!--头部-->
+	<div class="header">
+		<!-- 导航条 -->
+		<nav class="nav">
+			<div class="wrapper">
+				<ul id="nav_ul">
+					<li><a href="#">主页</a></li>
+				</ul>
+			</div>
+			<div class="nav-mask"></div>
+		</nav>
+		<!--作品区-->
+		<div class="wrapper">
+			<div class="items">
+				<div class="self">
+					<!--<h4><span></span>个人简介</h4>-->
+					<!--<ul>-->
+						<!--<li><span>傅珺晟</span></li>-->
+						<!--<li><span>邮箱：</span><span>fujunsh@163.com</span></li>-->
+					<!--</ul>-->
+				</div>
+				<h4 class="items-title">个人作品</h4>
+				<div class="items-list">
+					<ul>
+						<li><span>CSS3</span></li>
+						<li><span>JavaScript</span></li>
+						<li><span>jQuery</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="items-content">
+				<div class="items-show">
+					<ul>
+						<li><a href="javascript:;">CSS3</a></li>
+						<li><a href="demo/css3/1-动画案例小球弹起.html"  target="_blank">1. 小球弹起动画</a></li>
+						<li><a href="demo/css3/2-渐变动态进度条.html" target="_blank">2. 渐变动态进度条</a></li>
+						<li><a href="demo/css3/3-心跳利用转换.html" target="_blank">3. 心跳-transform</a></li>
+						<li><a href="demo/css3/4-3D导航栏.html" target="_blank">4. 3D导航栏</a></li>
+						<li><a href="demo/css3/5-立方体盒子.html" target="_blank">5. 立方体盒子</a></li>
+					</ul>
+				</div>
+				<div class="items-show">
+					<ul>
+						<li><a href="javascript:;">javascript</a></li>
+						<li><a href="demo/js/1-无缝滚动样式/index.html"  target="_blank">1. 无缝滚动轮播图</a></li>
+						<li><a href="demo/js/2-完整版无缝焦点轮播图/index.html"  target="_blank">2. 无缝焦点轮播图</a></li>
+						<li><a href="demo/js/3-案例拖动对话框.html"  target="_blank">3. 拖动对话框</a></li>
+						<li><a href="demo/js/4-图片放大镜效果/index.html"  target="_blank">4. 图片放大镜效果</a></li>
+					</ul>
+				</div>
+				<div class="items-show">
+					<ul>
+						<li><a href="javascript:;">jQuery</a></li>
+						<li><a href="demo/jq/1-手风琴选项卡效果.html"  target="_blank">1. 手风琴选项卡效果</a></li>
+						<li><a href="demo/jq/2-表单全选.html"  target="_blank">2. 表单全选</a></li>
+						<li><a href="demo/jq/3-钢琴按键功能音乐导航.html"  target="_blank">3. 钢琴按键功能音乐导航</a></li>
+						<li><a href="demo/jq/4-弹幕效果.html"  target="_blank">4. 弹幕效果</a></li>
+						<li><a href="demo/jq/5-呼吸灯轮播图/index.html"  target="_blank">5. 呼吸灯轮播图</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="mask"></div>
+
+
+		</div>
+
+	</div>
+
+</body>
+</html>
+<script src="lib/jquery-1.12.4.min.js"></script>
+<script src="javascript/js.js"></script>
+<script>
+
+	$(function () {
+	    var $li = $(".items-list li");
+        var $div = $(".items-show");
+
+        $li.on("click", function () {
+
+            var index = $(this).index();
+
+            if($(this).hasClass("current")) {
+                $div.removeClass("current");
+                $li.removeClass("current");
+                return;
+            }
+
+            $div.removeClass("current");
+            $li.removeClass("current");
+            $div.eq(index).addClass("current");
+            $(this).addClass("current");
+
+        });
+    });
+
+</script>

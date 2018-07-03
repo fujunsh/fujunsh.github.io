@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-表单全选</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div>
+        <input type="checkbox" id="all">sele all <br/>
+    </div>
+    <hr>
+    <input type="checkbox">sele 1 <br/>
+    <input type="checkbox">sele 2 <br/>
+    <input type="checkbox">sele 3 <br/>
+    <input type="checkbox">sele 4 <br/>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $("#all").click(function () {
+        $(".box>input").prop("checked",$(this).prop("checked"));
+    });
+    $(".box>input").click(function () {
+        // 得到表单的长度, jQuery得到的对象是一个伪数组
+        var inps = $(".box>input").length;
+        // :checked 被选中的个数 过滤选择器
+        var ckinps = $(".box>input:checked").length;
+        if(inps == ckinps){
+            $("#all").prop("checked", true);
+        }
+        else {
+            $("#all").prop("checked", false);
+        }
+    });
+</script>
+</body>
+</html>
