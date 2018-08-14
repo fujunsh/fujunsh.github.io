@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-3D导航栏</title>
+    <style>
+        *::after,*::before {
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+        }
+        nav {
+            display: inline-block;
+            margin-top: 100px;
+        }
+        nav a {
+            text-decoration: none;
+            display: inline-block;
+            color: white;
+            perspective: 300px; /* 视距 */
+        }
+        nav a span {
+            display: inline-block;
+            line-height: 40px;
+            padding: 0 25px;
+            background-color: #2195de;
+            position: relative;
+            transition: all 1s;
+            transform-origin: top; /* 转3D */
+            transform-style: preserve-3d;
+        }
+        nav a span::after {
+            content: attr(data-hover);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0965a0;
+            transform: rotateX(-90deg); /* 向下翻转 */
+            transform-origin: top;
+        }
+        nav a span:hover {
+            transform: rotateX(90deg) translateY(-20px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">
+            <span data-hover="瞅你咋的">你瞅啥一</span>
+        </a>
+        <a href="#">
+            <span data-hover="瞅你咋的">你瞅啥二</span>
+        </a>
+        <a href="#">
+            <span data-hover="瞅你咋的">你瞅啥三</span>
+        </a>
+        <a href="#">
+            <span data-hover="瞅你咋的">你瞅啥四</span>
+        </a>
+        <a href="#">
+            <span data-hover="瞅你咋的">你瞅啥五</span>
+        </a>
+        <a href="#">
+            <span data-hover="瞅你咋的">你瞅啥六</span>
+        </a>
+        <a href="#">
+            <span data-hover="瞅你咋的">你瞅啥七</span>
+        </a>
+        <a href="#">
+            <span data-hover="瞅你咋的">你瞅啥八</span>
+        </a>
+    </nav>
+</body>
+</html>

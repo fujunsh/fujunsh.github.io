@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-完整版无缝焦点轮播图</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 60px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 60px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="all" id='box'>
+    <div class="screen">
+        <ul id="ul">
+            <li><img src="images/taobao/1.jpg" width="500" height="200"/></li>
+            <li><img src="images/taobao/2.jpg" width="500" height="200"/></li>
+            <li><img src="images/taobao/3.jpg" width="500" height="200"/></li>
+            <li><img src="images/taobao/4.jpg" width="500" height="200"/></li>
+            <li><img src="images/taobao/5.jpg" width="500" height="200"/></li>
+        </ul>
+        <ol id="ol"></ol>
+    </div>
+    <div id="arr">
+        <span id="left"><</span>
+        <span id="right">></span>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    var box = document.getElementById("box");
+    var ul = document.getElementById("ul");
+    var ol = document.getElementById("ol");
+    var ulis = ul.children;
+    var imgW = ul.children[0].children[0].offsetWidth;
+
+    var index = 0;
+    // 简单索引轮播图匀速
+    for (var i = 0; i < ulis.length; i++) {
+        var li = document.createElement("li");
+        li.innerHTML = (i + 1);
+        ol.appendChild(li);
+        li.setAttribute("index", i);
+        li.onmouseover = function () {
+            for (var j = 0; j < ol.children.length; j++) {
+                ol.children[j].removeAttribute("class");
+            }
+            this.className = "current";
+            index = this.getAttribute("index");
+            animate(ul, {"left": -index * imgW});
+        }
+    }
+    ol.children[0].className = "current";
+    // 左右焦点按钮显示/隐藏
+    var arr = document.getElementById("arr");
+    var lf = arr.children[0];
+    var rt = arr.children[1];
+    box.onmouseover = function () {
+        arr.style.display = "block";
+        clearInterval(time);
+    };
+    box.onmouseout = function () {
+        arr.style.display = "none";
+        time = setInterval(autoClick,1500);
+    };
+    // 无缝效果
+    ul.appendChild(ul.children[0].cloneNode(true));
+    // 右按钮效果
+    // 点击时，假设index = 4; 也就是第五张图
+    // 此时不满足条件，index + 1 = 5;
+    // 动画移动到第6张图位置(和第一张图一样),但序列的索引变为了 0
+    rt.onclick = function () {
+        if (index == ulis.length - 1) {
+            index = 0;
+            ul.style.left = 0 + "px";
+        }
+        index++;
+        animate(ul, {"left": -index * imgW});
+        if (index == ulis.length - 1) {
+            ol.children[0].className = "current";
+            ol.children[ol.children.length - 1].className = "";
+        }
+        else {
+            for (var i = 0; i < ol.children.length; i++) {
+                ol.children[i].className = "";
+            }
+            ol.children[index].className = "current";
+        }
+    };
+    // 左按钮效果
+    lf.onclick = function () {
+        if (index == 0) {
+            index = 5;
+            ul.style.left = -index * imgW + "px";
+        }
+        index--;
+        animate(ul, {"left": -index * imgW});
+        for (var i = 0; i < ol.children.length; i++) {
+            ol.children[i].className = "";
+        }
+        ol.children[index].className = "current";
+    };
+    // 自动播放,就是不停地点击右焦点按钮
+    var time = setInterval(autoClick,3500);
+    function autoClick () {
+        if (index == ulis.length - 1) {
+            index = 0;
+            ul.style.left = 0 + "px";
+        }
+        index++;
+        animate(ul, {"left": -index * imgW});
+        if (index == ulis.length - 1) {
+            ol.children[0].className = "current";
+            ol.children[ol.children.length - 1].className = "";
+        }
+        else {
+            for (var i = 0; i < ol.children.length; i++) {
+                ol.children[i].className = "";
+            }
+            ol.children[index].className = "current";
+        }
+    }
+
+    // function animate(obj, target) {
+    //     clearInterval(obj.time);
+    //     var current = obj.offsetLeft;
+    //     var step = 30;
+    //     step = target > current ? step : -step;
+    //     obj.time = setInterval(function () {
+    //         current += step;
+    //         obj.style.left = current + "px";
+    //         if (Math.abs(target - current) <= Math.abs(step)) {
+    //             obj.style.left = target + "px";
+    //             clearInterval(obj.time);
+    //         }
+    //     }, 20);
+
+    // }
+    // function animate (obj, attr, target) {
+    //     clearInterval(obj.time);
+    //     obj.time = setInterval(function () {
+    //         var current = parseInt(getStyle(obj, attr));
+    //         var step = (target - current) / 10;
+    //         step = step > 0 ? Math.ceil(step) : Math.floor(step);
+    //         current += step;
+    //         obj.style[attr] = current + "px";
+    //         if(current == target) {
+    //             clearInterval(obj.time);
+    //         }
+    //     },30);
+    // }
+    // function getStyle (obj, attr) {
+    //     return window.getComputedStyle ?
+    //             window.getComputedStyle(obj,null)[attr] :
+    //             obj.currentStyle[attr];
+    // }
+
+
+
+    function animate(obj, json, fn) {
+        clearInterval(obj.time);
+        obj.time = setInterval(function () {
+            var flag = true;
+            for (var attr in json) {
+                if(attr == "opacity") {
+                    var current = getStyle(obj, attr) * 100;
+                    var target = json[attr] * 100;
+                    var step = (target - current) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    current += step;
+                    obj.style[attr] = current / 100;
+                }
+                else if (attr == "zIndex") {
+                    obj.style[attr] = json[attr];
+                }
+                else {
+                    var current = parseInt(getStyle(obj, attr));
+                    var target = json[attr];
+                    var step = (target - current) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    current += step;
+                    obj.style[attr] = current + "px";
+                }
+                if (current != target) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                clearInterval(obj.time);
+                // 回调函数
+                if(fn){
+                    fn();
+                }
+            }
+        }, 10);
+    }
+    function getStyle(obj, attr) {
+        return window.getComputedStyle ?
+                window.getComputedStyle(obj, null)[attr] :
+                obj.currentStyle[attr];
+    }
+</script>
