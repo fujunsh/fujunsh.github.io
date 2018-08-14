@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery常见效果</title>
+  <link rel="stylesheet" href="./src/css/index.css">
+</head>
+
+<body>
+  <div class="header">
+    <h2>jQuery demo</h2>
+    <ul id="nav">
+      <li>
+        <a href="javascript: void(0);">tab切换</a>
+      </li>
+      <li>
+        <a href="javascript: void(0);">无缝轮播</a>
+      </li>
+      <li>
+        <a href="javascript: void(0);">呼吸灯轮播</a>
+      </li>
+      <li>
+        <a href="javascript: void(0);">图片放大镜</a>
+      </li>
+    </ul>
+  </div>
+  <div id="view">
+    <div class="show">
+      <div class="tab">
+        <ul>
+          <li>
+            <a href="javascript:;">item1</a>
+          </li>
+          <li>
+            <a href="javascript:;">item2</a>
+          </li>
+          <li>
+            <a href="javascript:;">item3</a>
+          </li>
+          <li>
+            <a href="javascript:;">item4</a>
+          </li>
+          <li>
+            <a href="javascript:;">item5</a>
+          </li>
+        </ul>
+        <img src="./src/images/1.png" alt="" width="490" height="300">
+        <img src="./src/images/2.png" alt="" width="490" height="300">
+        <img src="./src/images/3.png" alt="" width="490" height="300">
+        <img src="./src/images/4.png" alt="" width="490" height="300">
+        <img src="./src/images/5.png" alt="" width="490" height="300">
+      </div>
+    </div>
+    <div>
+      <div class="lb" id="slider1">
+        <div class="lb-btn">
+          <a href="javascript: void(0);" class="arrow arrow-left"><</a>
+          <a href="javascript: void(0);" class="arrow arrow-right">></a>
+        </div>
+        <ul class="lb-imgs">
+          <li>
+            <img src="./src/images/1.png" alt="" width="490" height="300">
+          </li>
+          <li>
+            <img src="./src/images/2.png" alt="" width="490" height="300">
+          </li>
+          <li>
+            <img src="./src/images/3.png" alt="" width="490" height="300">
+          </li>
+          <li>
+            <img src="./src/images/4.png" alt="" width="490" height="300">
+          </li>
+          <li>
+            <img src="./src/images/5.png" alt="" width="490" height="300">
+          </li>
+          <li>
+            <img src="./src/images/1.png" alt="" width="490" height="300">
+          </li>
+        </ul>
+        <ul class="lb-id">
+          <li class="current"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="lb" id="slider2">
+        <div class="lb-btn">
+          <a href="javascript: void(0);" class="arrow arrow-left"><</a>
+          <a href="javascript: void(0);" class="arrow arrow-right">></a>
+        </div>
+        <ul class="lb-imgs">
+          <li>
+            <img src="./src/images/1.png" alt="" width="490" height="300">
+          </li>
+          <li>
+            <img src="./src/images/2.png" alt="" width="490" height="300">
+          </li>
+          <li>
+            <img src="./src/images/3.png" alt="" width="490" height="300">
+          </li>
+          <li>
+            <img src="./src/images/4.png" alt="" width="490" height="300">
+          </li>
+          <li>
+            <img src="./src/images/5.png" alt="" width="490" height="300">
+          </li>
+        </ul>
+        <ul class="lb-id">
+          <li class="current"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="mg">
+        <div class="mg-small">
+          <img src="./src/images/001.jpg">
+          <div class="mg-mask"></div>
+        </div>
+        <div class="mg-big">
+          <img src="./src/images/0001.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="./src/lib/jquery.js"></script>
+  <script src="./src/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3常见效果</title>
+    <link rel="stylesheet" href="./src/css/index.css">
+</head>
+
+<body>
+    <div class="header">
+        <h2>CSS3 demo</h2>
+        <ul id="nav">
+            <li>
+                <a href="javascript: void(0);">Loading</a>
+            </li>
+            <li>
+                <a href="javascript: void(0);">立方体、旋转木马</a>
+            </li>
+            <li>
+                <a href="javascript: void(0);">CSS时钟</a>
+            </li>
+            <li>
+                <a href="javascript: void(0);">鼠标进入效果</a>
+            </li>
+        </ul>
+    </div>
+    <div id="view">
+        <div class="show">
+            <ul class="item loading">
+                <li>
+                    <div class="loading-bar">
+                        <div class="loading-innerbar"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="loading-mbar"></div>
+
+                </li>
+                <li>
+                    <div class="loading-ring"></div>
+                </li>
+                <li>
+                    <div class="loading-load4"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="hide">
+            <ul class="item bs">
+                <li class="container">
+                    <div class="cube">
+                        <ul>
+                            <li>第1个面</li>
+                            <li>第2个面</li>
+                            <li>第3个面</li>
+                            <li>第4个面</li>
+                            <li>第5个面</li>
+                            <li>第6个面</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="container">
+                    <div class="carousel">
+                        <ul>
+                            <li>
+                                <img src="./src/images/1.png" alt="">
+                            </li>
+                            <li>
+                                <img src="./src/images/2.png" alt="">
+                            </li>
+                            <li>
+                                <img src="./src/images/3.png" alt="">
+                            </li>
+                            <li>
+                                <img src="./src/images/4.png" alt="">
+                            </li>
+                            <li>
+                                <img src="./src/images/5.png" alt="">
+                            </li>
+                            <li>
+                                <img src="./src/images/6.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="hide">
+            <div class="wrap-clock">
+                <div class="clock">
+                    <!-- 时钟刻度线条 -->
+                    <div class="line"></div>
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                    <div class="line line4"></div>
+                    <div class="line line5"></div>
+                    <div class="line line6"></div>
+                    <!-- 内部白圆与线条配合形成刻度 -->
+                    <div class="white_circle"></div>
+                    <!-- 时钟中心圆点 -->
+                    <div class="black_circle"></div>
+                    <div class="hour"></div>
+                    <div class="minute"></div>
+                    <div class="second"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="hide">
+            <div class="mouse1" data-msg="Check me">
+                <h3>title</h3>
+                <div class="line linetop"></div>
+                <div class="line linebottom"></div>
+                <div class="line lineleft"></div>
+                <div class="line lineright"></div>
+            </div>
+        </div>
+    </div>
+
+<script src="./src/js/index.js"></script>
+</body>
+
+</html>

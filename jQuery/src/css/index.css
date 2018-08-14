@@ -1,0 +1,271 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+button,
+textarea,
+p,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: url('../images/bg.jpg') repeat;
+  font-size: 14px;
+  font-family: 'Open Sans Condensed', 'Arial Narrow', serif;
+  color: #ccc;
+}
+
+a {
+  color: #999;
+  text-decoration: none;
+  font-style: italic;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.header h2 {
+  color: #999;
+  padding: 10px;
+}
+
+.header #nav li {
+  display: inline-block;
+  padding: 6px 10px;
+  background-color: rgba(255, 0, 0, 0.02);
+  border: 1px solid #fff;
+  margin-right: 5px;
+}
+
+.header #nav li:hover {
+  background-color: rgba(255, 255, 255, 0.54);
+}
+
+#view {
+  width: 1000px;
+  height: 100%;
+  padding: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#view>div {
+  display: none;
+}
+
+#view .show {
+  display: block;
+}
+
+#view .item {
+  width: 100%;
+  height: 100%;
+}
+
+#view .tab {
+  width: 490px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: rgba(255, 0, 0, 0.02);
+  box-shadow: 0 0 5px 10px #ccc;
+  position: relative;
+}
+
+#view .tab ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#view .tab ul li {
+  border-bottom: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 0.5s;
+}
+
+#view .tab ul li:last-child {
+  border-bottom: none;
+}
+
+#view .tab ul li:hover {
+  background-color: rgba(255, 255, 255, .3);
+}
+
+#view .tab ul li a {
+  display: block;
+  width: 120px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+
+#view .tab img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#view .lb {
+  width: 490px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: rgba(255, 0, 0, 0.02);
+  box-shadow: 0 0 5px 10px #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+#view .lb .lb-btn {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#view .lb .lb-btn .arrow {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgba(255, 255, 255, .1);
+  font-style: normal;
+  z-index: 10;
+}
+
+#view .lb .lb-btn .arrow-left {
+  top: 125px;
+  left: 5px;
+}
+
+#view .lb .lb-btn .arrow-right {
+  top: 125px;
+  right: 5px;
+}
+
+#view .lb .lb-imgs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 3000px;
+  font-size: 0;
+}
+
+#view .lb .lb-imgs li {
+  float: left;
+}
+
+#view .lb .lb-id {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: auto;
+  text-align: center;
+  padding: 10px 0;
+  transform: translate(-50%)
+}
+
+#view .lb .lb-id li {
+  width: 24px;
+  height: 6px;
+  background-color: #fff;
+  float: left;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+#view .lb .lb-id .current {
+  background-color: #888;
+}
+
+#slider2 .lb-imgs {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#slider2 .lb-imgs li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#slider2 .lb-imgs li:first-child {
+  display: block;
+}
+
+.mg {
+  width: 350px;
+  height: 350px;
+  border: 1px solid #ccc;
+  margin: 0 100px;
+  position: relative;
+}
+.mg .mg-big {
+  width: 450px;
+  height: 450px;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 0;
+  left: 360px;
+  overflow: hidden;
+  display: none;
+}
+.mg .mg-small {
+  width: 350px;
+  height: 350px;
+  position: relative;
+}
+.mg .mg-mask {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: move;
+  display: none;
+}
+.mg .mg-big img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
