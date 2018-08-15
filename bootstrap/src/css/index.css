@@ -1,0 +1,633 @@
+
+/**
+    公共类
+ */
+body {
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+@font-face {
+    font-family: 'myself-font';
+    src: url('../font/MiFie-Web-Font.eot') format('embedded-opentype'),
+        url('../font/MiFie-Web-Font.svg') format('svg'),
+        url('../font/MiFie-Web-Font.ttf') format('truetype'),
+        url('../font/MiFie-Web-Font.woff') format('woff');
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: 'myself-font';
+    font-style: normal;
+}
+
+.icon-mobilephone::before {
+    content: "\e908";
+    font-size: 13px;
+}
+.icon-telephone::before {
+    content: "\e909";
+    font-size: 15px;
+}
+.icon-text::before {
+    content: "\e93e";
+}
+
+/*.icon-logo::before {*/
+    /*content: "\e920";*/
+/*}*/
+
+
+
+
+/**
+ * Bootstrap扩展
+ */
+.navbar-myself {
+    background-color: #fff;
+    border-color: #fff;
+    margin-bottom: 0;
+    width: 100%;
+    top: 0;
+}
+.navbar-myself .navbar-brand {
+    color: #777;
+    height: 80px;
+}
+.navbar-myself .navbar-brand:hover,
+.navbar-myself .navbar-brand:focus {
+    color: #222;
+    background-color: transparent;
+}
+.navbar-myself .navbar-text {
+    color: #777;
+}
+.navbar-myself .navbar-nav > li > a {
+    color: #777;
+    line-height: 48px;
+}
+.navbar-myself .navbar-nav > li > a:hover,
+.navbar-myself .navbar-nav > li > a:focus {
+    color: #333;
+    background-color: transparent;
+    border-bottom: 2px solid #E92322;
+}
+.navbar-myself .navbar-nav > .active > a,
+.navbar-myself .navbar-nav > .active > a:hover,
+.navbar-myself .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: transparent;
+    border-bottom: 2px solid #E92322;
+}
+.navbar-myself .navbar-nav > .disabled > a,
+.navbar-myself .navbar-nav > .disabled > a:hover,
+.navbar-myself .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+.navbar-myself .navbar-toggle {
+    margin-top: 23px;
+    margin-bottom: 23px;
+    border-color: #ddd;
+}
+.navbar-myself .navbar-toggle:hover,
+.navbar-myself .navbar-toggle:focus {
+    background-color: #ddd;
+}
+.navbar-myself .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+.navbar-myself .navbar-collapse,
+.navbar-myself .navbar-form {
+    border-color: #e7e7e7;
+}
+.navbar-myself .navbar-nav > .open > a,
+.navbar-myself .navbar-nav > .open > a:hover,
+.navbar-myself .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+    .navbar-myself .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+    .navbar-myself .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-myself .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+    .navbar-myself .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-myself .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-myself .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    .navbar-myself .navbar-nav .open .dropdown-menu > .disabled > a,
+    .navbar-myself .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .navbar-myself .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+}
+.navbar-myself .navbar-link {
+    color: #777;
+}
+.navbar-myself .navbar-link:hover {
+    color: #333;
+}
+.navbar-myself .btn-link {
+    color: #777;
+}
+.navbar-myself .btn-link:hover,
+.navbar-myself .btn-link:focus {
+    color: #333;
+}
+.navbar-myself .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-myself .btn-link:hover,
+.navbar-myself .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-myself .btn-link:focus {
+    color: #ccc;
+}
+
+
+
+
+
+
+
+/**
+    头部区域
+ */
+
+.topbar {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #c0c0c0;
+}
+.topbar .row > div {
+    height: 40px;
+    font-size: 12px;
+    color: #888;
+}
+.topbar .row > div + div {
+    border-left: 1px solid #c0c0c0;
+}
+
+.topbar .mobile-link {
+    text-decoration: none;
+    color: #888;
+    position: relative;
+}
+
+.topbar .mobile-link img {
+    display: none;
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    margin-left: -60px;
+}
+.topbar .mobile-link:hover img{
+    display: block;
+    z-index: 1001;
+}
+
+.topbar .col-md-2 a {
+    text-decoration: none;
+    color: #888;
+}
+.topbar .col-md-3  .btn-link {
+    text-decoration: none;
+    color: #888;
+}
+
+.navbar .icon-logo {
+    font-size: 50px;
+    color: #E92322;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.navbar .icon-text {
+    font-size: 32px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.navbar-myself .navbar-nav li{
+    line-height: 78px;
+    font-size: 14px;
+}
+
+
+/**
+    通栏轮播图
+ */
+
+#main_ad {}
+
+#main_ad > .carousel-inner > .item {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+@media (min-width: 768px) {
+    /* 如果屏幕大于768px 才使用高度，否则由js控制自适应 */
+    #main_ad > .carousel-inner > .item {
+        height: 410px;
+    }
+}
+
+
+
+/**
+   特色区域
+ */
+#feature {
+    padding: 50px 0;
+    border-bottom: 1px solid #c0c0c0;
+}
+#feature .row div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#feature .row .media a {
+    text-decoration: none;
+    color: #777;
+}
+#feature .row .media a:hover {
+    text-decoration: none;
+    color: #E92322;
+}
+#feature .row .icon-uniE907 {
+    font-size: 32px;
+}
+.icon-uniE907::before {
+    content: "\e907";
+}
+
+
+/**
+    预约
+ */
+
+#yuyue {
+    border-bottom: 1px solid #c0c0c0;
+}
+#yuyue p {
+    padding: 20px 0;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+#yuyue p i {
+    font-size: 20px;
+}
+#yuyue .icon-uniE906:before {
+    content: "\e906";
+}
+
+#yuyue p span {
+    color: #e92322;
+}
+#yuyue .pull-left a ,
+#yuyue .pull-left a:hover {
+    text-decoration: none;
+    color: #e92322;
+    border-bottom: 1px dashed #e92322;
+}
+
+#yuyue  .icon-uniE905:before {
+    content: "\e905";
+}
+
+#yuyue .pull-right a ,
+#yuyue .pull-right a:hover {
+    text-decoration: none;
+    color: #0f0f0f;
+}
+
+
+
+/**
+    产品
+ */
+
+#products {
+    background-color: #f1f1f1;
+    padding: 40px 0;
+}
+
+/* 直接这样写pc上也会始终有横向滚动条 */
+/*#products .ul-wrapper {*/
+    /*overflow-x: scroll;*/
+/*}*/
+
+#products .nav-tabs {
+    padding-left: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+#products .nav-tabs li a {
+    font-size: 16px;
+    color: #0f0f0f;
+}
+
+#products .nav-tabs li.active a {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 4px solid #e92322;
+}
+
+#products .tab-content {
+    padding: 20px 0;
+}
+
+.panel-myself {
+    border-radius: 0;
+    border: 0;
+    box-shadow: 1px 2px 5px #c0c0c0;
+    position: relative;
+}
+.panel-myself.actived {
+    background-color: #e92322;
+    color: white;
+}
+.panel-myself.disabled {
+    background-color: #e0e0e0;
+}
+.panel-myself.actived::before {
+    content: "\e915";
+    position: absolute;
+    font-family: myself-font;
+    color: #fff;
+    font-size: 33px;
+    font-weight: 100;
+    top: -8px;
+    left: -1px;
+}
+.panel-myself > .panel-heading {
+    float: right;
+    width: 120px;
+    height: 150px;
+    padding: 45px 0;
+    text-align: center;
+    border-left: 1px dashed #ccc;
+    position: relative;
+}
+
+.panel-myself > .panel-heading::before {
+     content: '';
+     width: 16px;
+     height: 16px;
+     border-radius: 8px;
+     position: absolute;
+     top: -8px;
+     left: -8px;
+     background-color: #f1f1f1;
+ }
+.panel-myself > .panel-heading::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: -8px;
+    left: -8px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 1px #c0c0c0 inset;
+}
+/*.panel-myself > .panel-heading div {*/
+    /*padding-top: 40px;*/
+/*}*/
+.panel-myself > .panel-heading div strong {
+    font-size: 36px;
+}
+
+.panel-myself > .panel-body {
+    margin-right: 120px;
+    height: 150px;
+}
+.panel-myself > .panel-body h5 {
+    margin-top: 0;
+    font-size: 16px;
+}
+.panel-myself > .panel-body .row p {
+    margin: 0;
+    padding-bottom: 4px;
+}
+
+.panel-myself > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #ddd;
+}
+
+.panel-myself > .panel-heading .tooltips {
+    width: 100%;
+    position: absolute;
+    top: 25px;
+    text-align: center;
+    margin: 0;
+}
+
+.panel-myself > .panel-heading .tooltips .badge {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 3px;
+}
+.panel-myself > .panel-heading .tooltips .badge-one {
+    color: #e92322;
+    border: 1px solid #e92322;
+}
+.panel-myself > .panel-heading .tooltips .badge-two {
+    color: #5bc0de;
+    border: 1px solid #5bc0de;
+}
+
+
+
+
+/**
+    新闻区域
+ */
+#news {
+    padding: 50px 0;
+    border-bottom: 1px solid #ccc;
+}
+#news .news-title {
+    padding: 10px 0;
+    font-size: 22px;
+    border-bottom: 1px dashed #ccc;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+#news .news-title::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+    position: absolute;
+    bottom: -5px;
+    right: -10px;
+}
+#news .news-icon li {
+    float: left;
+}
+#news .news-icon a {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    margin: 0 10px 20px 0;
+}
+#news .news-icon .active a {
+    background-color: #e92322;
+    color: white;
+}
+#news .news-icon a:hover {
+    background-color: #e92322;
+    color: white;
+}
+
+.icon-news01:before {
+    content: "\e90e";
+    font-size: 28px;
+    color: #EAEAEA;
+}
+
+@media (min-width: 768px) {
+    #news .news-icon li {
+        float: left;
+    }
+}
+.icon-news02:before {
+    content: "\e90f";
+    font-size: 28px;
+    color: #EAEAEA;
+}
+
+.icon-news03:before {
+    content: "\e910";
+    font-size: 28px;
+    color: #EAEAEA;
+}
+
+.icon-news04:before {
+    content: "\e911";
+    font-size: 28px;
+    color: #EAEAEA;
+}
+
+
+#news .tab-content li {
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+
+
+
+
+/**
+    合作伙伴
+ */
+
+#hzhb {
+    padding: 40px 0;
+    text-align: center;
+}
+#hzhb h4 {
+    font-size: 26px;
+    font-weight: 700;
+}
+#hzhb ul {
+    list-style: none;
+}
+#hzhb ul li {
+    float: left;
+}
+#hzhb ul li + li {
+    border-left: 1px dashed #ccc;
+}
+#hzhb ul li a {
+    text-decoration: none;
+    font-size: 40px;
+    display: inline-block;
+    padding: 0 40px;
+    color: #999999;
+}
+
+.icon-uniE930:hover {
+    color: #df3232;
+}
+
+.icon-uniE930:before {
+    content: "\e946";
+}
+
+.icon-uniE92F:hover {
+    color: #e8380d;
+}
+
+.icon-uniE92F:before {
+    content: "\e92f";
+}
+
+.icon-uniE92E:hover {
+    color: #ed6f00;
+}
+
+.icon-uniE92E:before {
+    content: "\e92e";
+}
+
+.icon-uniE92A:hover {
+    color: #159f69;
+}
+
+.icon-uniE92A:before {
+    content: "\e92a";
+}
+
+.icon-uniE929:hover {
+    color: #07569e;
+}
+
+.icon-uniE929:before {
+    content: "\e929";
+}
+
+.icon-uniE931:hover {
+    color: #004098;
+}
+
+.icon-uniE931:before {
+    content: "\e931";
+}
+
+.icon-uniE92C:hover {
+    color: #d32019;
+}
+
+.icon-uniE92C:before {
+    content: "\e92c";
+}
+
+.icon-uniE92B:hover {
+    color: #3eac4a;
+}
+
+.icon-uniE92B:before {
+    content: "\e92b";
+}
+
+.icon-uniE92D:hover {
+    color: #2bb289;
+}
+
+.icon-uniE92D:before {
+    content: "\e92d";
+}
+
+
+
