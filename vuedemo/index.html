@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue+bootstrap</title>
+  <script src="./lib/vue.js"></script>
+  <link rel="stylesheet" href="./lib/bootstrap.min.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">信息目录</h3>
+        </div>
+        <div class="panel-body form-inline">
+          <label>
+            Id:
+            <input type="text" class="form-control" v-model="id">
+          </label>
+          <label>
+            Name:
+            <input type="text" class="form-control" v-model="name" @keydown.enter="add">
+          </label>
+          <input type="button" class="btn btn-primary btn-sm" value="添加" @click="add">
+          <label>
+            搜索关键字:
+            <input type="text" class="form-control" v-model="keywords" v-foc>
+          </label>
+        </div>
+      </div>
+
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Ctime</td>
+            <td>Operation</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in sreach(keywords)" :key="item.id">
+            <td>{{ item.id }}</td>
+            <td v-text="item.name"></td>
+            <td>{{ item.ctime | dateFormat('') }}</td>
+            <td>
+              <a href="" @click.prevent="del(item.id)">删除</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="text-center" v-show="sreach(keywords).length==0">暂无数据</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      id: '',
+      name: '',
+      keywords: '',
+      list: [{
+          id: 1,
+          name: '张三',
+          ctime: new Date()
+        },
+        {
+          id: 2,
+          name: '李四',
+          ctime: new Date()
+        },
+        {
+          id: 3,
+          name: '王五',
+          ctime: new Date()
+        }
+      ]
+    },
+    methods: {
+      add() {
+        var obj = {
+          id: this.id,
+          name: this.name,
+          ctime: new Date()
+        };
+        this.list.push(obj);
+        this.id = this.name = ''
+      },
+      del(id) {
+        var index = this.list.findIndex(item => {
+          if (item.id == id) {
+            return true;
+          }
+        })
+        this.list.splice(index, 1);
+      },
+      sreach(keywords) {
+        return this.list.filter(item => {
+          if (item.name.includes(keywords)) {
+            return item;
+          }
+        })
+      }
+    },
+    directives: {
+      'foc': {
+        inserted: function (el) {
+          el.focus();
+        }
+      }
+    },
+    filters: {
+      dateFormat(date, pattern) {
+        var dt = new Date(date);
+        var y = dt.getFullYear();
+        var m = (dt.getMonth() + 1).toString().padStart(2, '0');
+        var d = dt.getDate().toString().padStart(2, '0');
+        if (pattern.toLowerCase() == 'y-m-d') {
+          return `${y}-${m}-${d}`
+        } else {
+          var hh = dt.getHours().toString().padStart(2, '0');
+          var mm = dt.getMinutes().toString().padStart(2, '0');
+          var ss = dt.getSeconds().toString().padStart(2, '0');
+          return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+        }
+      }
+    }
+  })
+</script>
