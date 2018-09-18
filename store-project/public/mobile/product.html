@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="description" content="正品运动鞋、皮鞋网上专卖。包括耐克、阿迪达斯、李宁、匡威等国内外知名品牌的篮球鞋,板鞋,休闲鞋,跑步鞋,帆布...">
+  <meta name="Keywords" content="买鞋子运动鞋 篮球鞋 帆布鞋 跑步鞋 男鞋 女鞋 足球鞋 休闲鞋 凉鞋 户外鞋 布洛克 高跟鞋 单鞋 豆豆鞋 乐福鞋 牛津鞋 凉拖 皮鞋 短靴 长靴 登山鞋 徒步鞋 硫化鞋 训练鞋 溯溪鞋 越野鞋 板鞋 足球鞋 网球鞋 赛车鞋 雪地靴 马丁靴 商务 英伦">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="./assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="./assets/fontAwesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/product.css">
+  <title>商城-商品详情</title>
+</head>
+
+<body>
+  <div class="pro-container">
+    <header class="pro-header">
+      <a href="javascript:history.back();" class="left">
+        <span class="fa fa-arrow-left"></span>
+      </a>
+      <h3>商品详情</h3>
+      <a href="index.html" class="right"><span class="icon-home fa fa-home"></span></a>
+    </header>
+    <div class="pro-content">
+      <div class="pro-wrapper">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <div class="p-loading">
+              <span class="mui-icon mui-icon-spinner mui-spin"></span>
+            </div>
+            <!-- TODO -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="pro-buy">
+      <span class="btn-cart fa fa-shopping-cart"></span>
+      <button type="button" class="addCart mui-btn mui-btn-danger">加入购物车</button>
+      <button type="button" class="buying mui-btn mui-btn-warning">立即购买</button>
+    </footer>
+  </div>
+
+  <script type="text/template" id="p-detail">
+    <% 
+      if(!pic || !pic.length) {
+        var picArr = [{picAddr: './images/none1.jpg'}]
+      }
+    %>
+    <div class="mui-slider">
+      <div class="mui-slider-group mui-slider-loop">
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="<%=pic[pic.length-1].picAddr%>" /></a></div>
+        <% for(var i = 0; i < pic.length; i++) { %>
+          <div class="mui-slider-item"><a href="javascript:;"><img src="<%=pic[i].picAddr%>" /></a></div>
+        <% } %>
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="<%=pic[0].picAddr%>" /></a></div>
+      </div>
+      <div class="mui-slider-indicator">
+        <% for(var i = 0; i < pic.length; i++) { %>
+          <div class="mui-indicator <%=i==0?'mui-active':''%>"></div>
+        <% } %>
+      </div>
+    </div>
+    
+    <div class="p-title"><%=proName%></div>
+    
+    <div class="p-price">
+      价格：&nbsp;<strong>&yen;<%=price%></strong>&nbsp;&nbsp;&nbsp;<span>&yen;<%=oldPrice%></span>
+    </div>
+    
+    <div class="p-size">
+      尺码：
+      <% sizeArr = size.split('-') %>
+      <% for(var i = sizeArr[0]; i <= sizeArr[1]; i++) { %>
+        <span><%=i%></span>
+      <% } %>
+    </div>
+    
+    <div class="p-number">
+      数量： 
+      <div>
+        <span class="countSub">-</span>
+        <input type="text" value="0" readonly data-max="<%=num%>">
+        <span class="countAdd">+</span>
+      </div>
+      &nbsp;&nbsp;
+      剩余： <span><%=num%></span> 件
+    </div>
+  </script>
+
+
+  <script src="./assets/mui/js/mui.min.js"></script>
+  <script src="./assets/zepto/zepto.min.js"></script>
+  <script src="./assets/artTemplate/template-native.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/product.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+
+.pro-cart i {
+  font-style: normal;
+}
+
+.mui-scroll {
+  height: 100%;
+  padding-bottom: 35px;
+}
+
+.pro-cart {
+  width: 100%;
+  height: 100%;
+}
+
+.pro-cart .pro-cart-cont a {
+  color: #666;
+}
+
+.pro-cart .pro-cart-cont input {
+  position: absolute;
+  top: 58px;
+  left: 6px;
+  width: 20px;
+  height: 20px;
+}
+
+.pro-cart .pro-cart-cont img {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  margin-right: 5px;
+}
+
+.pro-cart .pro-cart-cont .newprice {
+  color: red;
+  font-size: 14px;
+}
+
+.pro-cart .pro-cart-cont .oldprice {
+  color: #ccc;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.pro-cart .pro-cart-cont .size {
+  float: right;
+  font-size: 14px;
+}
+
+.pro-sum {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  z-index: 10;
+}
+
+.pro-sum div {
+  float: left;
+  width: 66.6%;
+  background-color: #f0ad4e;
+}
+
+.pro-sum a {
+  float: left;
+  width: 33.3%;
+  background-color: #dd524d;
+  color: #fff;
+  font-weight: 700;
+}
+
+.p-size span {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.p-size span.now {
+  background-color: #fa672d;
+  color: #fff;
+}
+
+.p-number, .p-size {
+  text-align: left;
+}
+
+.p-number div {
+  display: inline-block;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.p-number div span {
+  display: inline-block;
+  width: 30px;
+  padding: 5px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.p-number div input {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  text-align: center;
+}

@@ -1,0 +1,48 @@
+
+.cate-left {
+    float: left;
+    width: 90px;
+    height: 100%;
+}
+.cate-left ul {
+    height: 100%;
+}
+.cate-left li {
+    text-align: center;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    line-height: 45px;
+}
+
+.cate-left .now {
+    background-color: #fff;
+    color: gold;
+    border-right: 1px solid #fff;
+}
+
+.cate-right {
+    overflow: hidden;
+    padding: 10px;
+}
+
+.cate-right ul {
+    width: 100%;
+}
+
+.cate-right li {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.cate-right a {
+    display: block;
+}
+
+.cate-right img {
+    width: 100%;
+}
+
+

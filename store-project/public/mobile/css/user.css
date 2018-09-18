@@ -1,0 +1,53 @@
+.pro-login {
+  padding: 10px;
+}
+
+.pro-login div {
+  position: relative;
+}
+
+.pro-login div span {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  color: #ccc;
+}
+
+.pro-login .pro-login-passwords.mui-active {
+  color: #007aff;
+}
+
+.pro-login button {
+  width: 100%;
+}
+
+.pro-login a {
+  float: right;
+  margin-top: 20px;
+  color: #007aff;
+  font-size: 14px;
+}
+
+/* 个人信息 */
+.pro-msg {
+  padding: 10px;
+  background-color: #fff;
+}
+
+.pro-msg li a img {
+  float: left;
+  width: 40px;
+  height: 40px;
+}
+
+.pro-msg li:first-child a span {
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 10px;
+  color: #666;
+}
+
+.pro-msg button {
+  width: 100%;
+}
+

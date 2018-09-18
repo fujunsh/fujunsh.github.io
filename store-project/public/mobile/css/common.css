@@ -1,0 +1,94 @@
+
+ul,ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pro-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pro-container .pro-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #006699;
+    line-height: 45px;
+    color: #fff;
+    text-align: center;
+}
+
+.pro-container .pro-header a {
+    position: absolute;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+}
+
+.pro-container .pro-header .left {
+    left: 0;
+}
+
+.pro-container .pro-header .right {
+    right: 0;
+}
+
+.pro-container .pro-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 45px;
+}
+
+.pro-container .pro-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #006699;
+    color: #fff;
+    text-align: center;
+}
+
+.pro-container .pro-footer a {
+    float: left;
+    width: 25%;
+    height: 55px;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.pro-container .pro-footer a span {
+    display: block;
+    padding-top: 4px;
+    font-size: 14px;
+}
+
+.pro-container .pro-footer .now {
+    color: gold;
+}
+
+.pro-container .pro-content {
+    padding: 45px 0 55px 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pro-container .pro-content .pro-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+* {
+  touch-action: none;
+}

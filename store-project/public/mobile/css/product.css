@@ -1,0 +1,108 @@
+.pro-buy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  color: #fff;
+  padding-top: 5px;
+  background-color: #ddd;
+}
+
+.pro-buy span {
+  display: inline-block;
+  width: 50px;
+  height: 40px;
+  color: #666;
+  text-align: center;
+  line-height: 40px;
+  padding: 0 70px 0 30px;
+  font-size: 22px;
+}
+
+.pro-buy button {
+  width: 120px;
+  height: 40px;
+}
+
+.p-loading {
+  width: 100%;
+  height: 550px;
+  text-align: center;
+  line-height: 550px;
+}
+
+.p-loading span {
+  color: #069;
+  animation: rotateLoading 1s infinite;
+}
+
+@keyframes rotateLoading {
+  form {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.p-title, .p-price, .p-size, .p-number {
+  padding: 20px 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+.p-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.p-price strong {
+  color: #fa672d;
+  font-size: 28px;
+}
+
+.p-price span {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.p-size span {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+.p-size span.now {
+  background-color: #fa672d;
+  color: #fff;
+}
+
+.p-number div {
+  display: inline-block;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.p-number div span {
+  display: inline-block;
+  width: 30px;
+  padding: 5px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.p-number input {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  text-align: center;
+}

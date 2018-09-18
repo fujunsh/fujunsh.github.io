@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+  <!-- ios 是否允许 创建桌面快捷启动方式 -->
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <!-- ios 顶部通知栏颜色 黑色 -->
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <!-- 数字不转为电话格式 -->
+  <meta content="telephone=no" name="format-detection">
+  <meta name="description" content="正品运动鞋、皮鞋网上专卖。包括耐克、阿迪达斯、李宁、匡威等国内外知名品牌的篮球鞋,板鞋,休闲鞋,跑步鞋,帆布...">
+  <meta name="Keywords" content="买鞋子运动鞋 篮球鞋 帆布鞋 跑步鞋 男鞋 女鞋 足球鞋 休闲鞋 凉鞋 户外鞋 布洛克 高跟鞋 单鞋 豆豆鞋 乐福鞋 牛津鞋 凉拖 皮鞋 短靴 长靴 登山鞋 徒步鞋 硫化鞋 训练鞋 溯溪鞋 越野鞋 板鞋 足球鞋 网球鞋 赛车鞋 雪地靴 马丁靴 商务 英伦">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="./../images/favicon.ico">
+  <link rel="stylesheet" href="./../assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="./../assets/fontAwesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./../css/common.css">
+  <link rel="stylesheet" href="./../css/cart.css">
+  <title>商品-购物车</title>
+</head>
+
+<body>
+  <div class="pro-container">
+    <header class="pro-header">
+      <a href="javascript:history.back();" class="left"><span class="fa fa-arrow-left"></span></a>
+      <h3>购物车</h3>
+      <a href="javascript:;" class="right"><span class="fa fa-refresh"></span></a>
+    </header>
+    <div class="pro-content">
+      <div class="pro-wrapper">
+        <div class="pro-sum">
+          <div>订单总额：&yen;<span>0</span> </div>
+          <a href="javascript:;">生成订单</a>
+        </div>
+        <div id="refreshContainer" class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <ul class="mui-table-view pro-cart">
+              <!-- TODO -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="pro-footer">
+      <a class="tab_home fa fa-home" href="../index.html"><span>首页</span></a>
+      <a class="tab_cate fa fa-bars" href="../category.html"><span>分类查询</span></a>
+      <a class="tab_cart fa fa-shopping-cart now" href="cart.html"><span>购物车</span></a>
+      <a class="tab_user fa fa-user" href="index.html"><span>会员中心</span></a>
+    </footer>
+  </div>
+
+  <script type="text/template" id="cartList">
+    <% for(var i = 0; i < data.length; i++) { %>
+    <% var item = data[i]; %>
+  <li class="mui-table-view-cell mui-transitioning">
+    <div class="mui-slider-right mui-disabled" data-id="<%=item.id%>">
+      <a href="javascript:;" class="mui-btn mui-btn-yellow mui-icon mui-icon-compose"></a>
+      <a href="javascript:;" class="mui-btn mui-btn-red mui-icon mui-icon mui-icon-trash"></a>
+    </div>
+    <div class="mui-slider-handle pro-cart-cont">
+      <a href="#">
+        <% if(item.pic && item.pic.picAddr) { %>
+          <img class="mui-pull-left" src="<%=item.pic.picAddr%>">
+        <% }else { %>
+          <img class="mui-pull-left" src="./../images/none.jpg">
+        <% } %>
+        <input type="checkbox" data-id="<%=item.id%>">
+        <div class="mui-media-body">
+          <%=item.proName%>
+          <p class='mui-ellipsis'>
+            <span class="newprice">&yen; <i><%=item.price%></i></span>&nbsp;&nbsp;&nbsp;
+            <span class="oldprice">&yen;<%=item.oldPrice%></span>
+            <span class="size">尺码： <%=item.size%></span>
+          </p>
+          <span class="num">个数： x <i><%=item.num%></i></span>
+        </div>
+      </a>
+    </div>
+  </li>
+  <% } %>
+</script>
+
+<script type="text/template" id="edit_pro">
+  <div class="p-size">
+    尺码：
+    <% var sizeArr = sizeScope.split('-') %>
+    <% for(var i = sizeArr[0]; i <= sizeArr[1]; i++) { %>
+    <span class="<%=i==size?'now':''%>"><%=i%></span>
+    <% } %>
+  </div>
+  <div class="p-number">
+    数量：
+    <div><span class="countSub">-</span><input type="text" value="<%=num%>" readonly data-max="<%=proNum%>"><span class="countAdd">+</span></div>
+  </div>
+</script>
+  <script src="./../assets/mui/js/mui.min.js"></script>
+  <script src="./../assets/zepto/zepto.min.js"></script>
+  <script src="./../assets/artTemplate/template-native.js"></script>
+  <script src="./../js/common.js"></script>
+  <script src="./../js/cart.js"></script>
+</body>
+
+</html>
