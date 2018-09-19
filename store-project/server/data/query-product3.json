@@ -1,0 +1,75 @@
+{
+  "page": 3,
+  "size": 3,
+  "data": [{
+      "brandId": 10,
+      "id": 10,
+      "num": 57,
+      "proName": "乔丹 男鞋跑步鞋减震轻便运动鞋 XM1560239 黑色/闪亮橘",
+      "proDesc": "这是商品描述",
+      "oldPrice": 221.1,
+      "price": 159.1,
+      "size": "35-47",
+      "status": "1",
+      "updata": "2018-6-4",
+      "pic": [{
+        "id": 10,
+        "picName": "product3-1.jpg",
+        "productId": 10,
+        "picAddr": "./images/product3-1.jpg"
+      }, {
+        "id": 7,
+        "picName": "23-1.png",
+        "productId": 1,
+        "picAddr": "product/23-1.png"
+      }]
+    },
+    {
+      "brandId": 11,
+      "id": 11,
+      "proName": "PUMA彪马官方 男子跑步鞋 Enzo Mesh 190015 黑色-彪马白 02 43 产地印度尼西",
+      "proDesc": "这是商品描述",
+      "oldPrice": 688.1,
+      "price": 459.1,
+      "num": 92,
+      "size": "39-46",
+      "status": "1",
+      "updata": "2018-2-3",
+      "pic": [{
+        "id": 2,
+        "picName": "product3-2.jpg",
+        "productId": 2,
+        "picAddr": "./images/product3-2.jpg"
+      }, {
+        "id": 3,
+        "picName": "23-1.png",
+        "productId": 2,
+        "picAddr": "product/23-1.jpg"
+      }]
+    },
+    {
+      "brandId": 12,
+      "id": 12,
+      "proName": "鸿星尔克ERKE 男鞋运动休闲透气防滑运动男慢跑鞋 11117202113 正黑 42 【满",
+      "proDesc": "这是商品描述",
+      "oldPrice": 229,
+      "price": 119.1,
+      "num": 34,
+      "size": "34-44",
+      "status": "1",
+      "updata": "2018-1-9",
+      "pic": [{
+        "id": 28,
+        "picName": "product3-3.jpg",
+        "productId": 3,
+        "picAddr": "./images/product3-3.jpg"
+      }, {
+        "id": 27,
+        "picName": "23-1.png",
+        "productId": 3,
+        "picAddr": "product/23-1.jpg"
+      }]
+    }
+  ],
+  "count": 3
+}

@@ -1,0 +1,99 @@
+{
+  "page": 2,
+  "size": 4,
+  "data": [
+    {
+      "brandId": 6,
+      "id": 6,
+      "num": 287,
+      "proName": "NEW BALANCE（NB）ML574VN US 5码37.5码 三原色 574男女款 青春原色 复古鞋情侣鞋 缓冲跑步鞋 旅游鞋",
+      "proDesc": "这是商品描述",
+      "oldPrice": 311.1,
+      "price": 248.1,
+      "size": "38-49",
+      "status": "1",
+      "updata": "2018-9-2",
+      "pic": [{
+        "id": 6,
+        "picName": "product2-1.jpg",
+        "productId": 6,
+        "picAddr": "./images/product2-1.jpg"
+      }, {
+        "id": 6,
+        "picName": "23-1.png",
+        "productId": 6,
+        "picAddr": "product/23-1.png"
+      }]
+    },
+    {
+      "brandId": 7,
+      "id": 7,
+      "proName": "匹克男鞋运动鞋2018新款耐磨情侣款款跑步鞋网面透气女鞋跑鞋休闲鞋 桔红/裙蓝（男款） 42",
+      "proDesc": "这是商品描述",
+      "oldPrice": 188.1,
+      "price": 99.1,
+      "num": 63,
+      "size": "34-46",
+      "status": "1",
+      "updata": "2018-1-2",
+      "pic": [{
+        "id": 7,
+        "picName": "product2-2.jpg",
+        "productId": 7,
+        "picAddr": "./images/product2-2.jpg"
+      }, {
+        "id": 7,
+        "picName": "23-1.png",
+        "productId": 7,
+        "picAddr": "product/23-1.jpg"
+      }]
+    },
+    {
+      "brandId": 8,
+      "id": 8,
+      "proName": "安踏（ANTA）91745523 男鞋跑步鞋新款 轻便耐磨减震休闲运动鞋 黑/安踏白 ",
+      "proDesc": "这是商品描述",
+      "oldPrice": 289,
+      "price": 193.1,
+      "num": 99,
+      "size": "37-49",
+      "status": "1",
+      "updata": "2018-6-3",
+      "pic": [{
+        "id": 8,
+        "picName": "product2-3.jpg",
+        "productId": 8,
+        "picAddr": "./images/product2-3.jpg"
+      }, {
+        "id": 8,
+        "picName": "23-1.png",
+        "productId": 8,
+        "picAddr": "product/23-1.jpg"
+      }]
+    },
+    {
+      "brandId": 9,
+      "id": 9,
+      "proName": "贵人鸟运动生活系列新款男子复古系带透气耐磨气垫跑步鞋休闲板鞋E88671 黑/芒",
+      "proDesc": "这是商品描述",
+      "oldPrice": 229,
+      "price": 119.1,
+      "num": 71,
+      "size": "39-45",
+      "status": "1",
+      "updata": "2018-7-4",
+      "pic": [{
+        "id": 28,
+        "picName": "product2-4.jpg",
+        "productId": 4,
+        "picAddr": "./images/product2-4.jpg"
+      }, {
+        "id": 27,
+        "picName": "23-1.png",
+        "productId": 4,
+        "picAddr": "product/23-1.jpg"
+      }]
+    }
+  ],
+  "count": 4
+}
